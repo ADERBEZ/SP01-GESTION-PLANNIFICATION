@@ -148,13 +148,23 @@ h2 {
 
 .role-tag {
     display: inline-block;
-    background: var(--light-green);
-    color: var(--main-green);
+    background: #edf5ee; 
+    color: #468F51;     
     padding: 5px 12px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
     border-radius: 50px;
     margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    text-transform: uppercase;
 }
 
 .dot {
