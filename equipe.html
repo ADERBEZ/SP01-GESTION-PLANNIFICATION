@@ -96,5 +96,14 @@
     <footer>
         Accréditation Niveau 4 requise pour toute modification de l'organigramme.
     </footer>
+    <script>
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        const navUl = document.querySelector('nav ul');
+        const contactLi = navUl.lastElementChild;
+        const gestionLi = document.createElement('li');
+        gestionLi.innerHTML = '<a href="gestion.html" style="color: #e67e22;">GESTION</a>';
+        navUl.insertBefore(gestionLi, contactLi);
+    }
+    </script>
 </body>
 </html>
