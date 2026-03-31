@@ -26,6 +26,25 @@
                 <div class="vertical-bar"></div>
                 <h1 class="site-title">SP-01 : GESTION & PLANIFICATION</h1>
             </div>
+                <div class="settings-container">
+                    <button id="settings-btn" class="gear-btn">⚙️</button>
+                    <div id="settings-dropdown" class="dropdown-content">
+                        <div class="dropdown-item" onclick="toggleDarkMode()">
+                            <span>🌙 Mode Sombre</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <span>🌐 Langue :</span>
+                            <select id="lang-select" onchange="changeLanguage()">
+                                <option value="fr">Français</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="dropdown-item" onclick="openLoginModal()">
+                            <span>🔑 Connexion</span>
+                        </div>
+                    </div>
+                </div>
         </div>
     </header>
 
