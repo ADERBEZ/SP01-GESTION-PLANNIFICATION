@@ -316,3 +316,45 @@ footer {
 .status-loading {
     color: #7f8c8d; /* Gris pendant le chargement */
 }
+
+/* Bouton Engrenage */
+.gear-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    padding: 5px;
+}
+.gear-btn:hover { transform: rotate(90deg); }
+
+/* Menu Déroulant */
+.settings-container { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    z-index: 10000;
+    padding: 10px;
+    border-radius: 4px;
+}
+.dropdown-item { padding: 10px; cursor: pointer; font-size: 13px; font-family: 'Montserrat'; }
+.dropdown-item:hover { background: var(--bg-light); }
+.show { display: block; }
+
+/* MODE SOMBRE */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+.dark-mode header, .dark-mode .member-card, .dark-mode .dropdown-content {
+    background-color: #252525;
+    border-color: #444;
+    color: white;
+}
+.dark-mode .site-title, .dark-mode nav ul li a { color: white; }
