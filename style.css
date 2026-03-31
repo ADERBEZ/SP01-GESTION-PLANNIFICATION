@@ -61,6 +61,7 @@ nav ul {
 }
 
 nav ul li a {
+    text-transform: uppercase;
     text-decoration: none;
     color: #2c3e50; /* Couleur sombre du texte */
     font-family: 'Montserrat', sans-serif;
@@ -73,11 +74,13 @@ nav ul li a {
 
 /* État Actif (Souligné vert comme sur l'image) */
 nav ul li a.active {
+    text-transform: uppercase;
     color: #468F51;
     border-bottom: 2px solid #468F51;
 }
 
 nav ul li a:hover {
+    text-transform: uppercase;
     color: #468F51;
 }
 
