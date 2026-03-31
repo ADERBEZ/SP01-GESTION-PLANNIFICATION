@@ -1,95 +1,163 @@
 :root {
-    --bg-color: #0d0d0d;
-    --accent-color: #ff3e3e;
-    --text-color: #e0e0e0;
-    --secondary-bg: #1a1a1a;
-    --border-color: #333;
+    --main-green: #468F51;
+    --dark-green: #2d5d35;
+    --text-color: #2c3e50;
+    --bg-light: #f4f7f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-light);
     color: var(--text-color);
-    font-family: 'Rajdhani', sans-serif;
-    margin: 0;
-    overflow-x: hidden;
 }
 
-/* Effet de scanline rétro */
-.scanline {
-    width: 100%;
-    height: 100px;
-    z-index: 10;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0.1;
-    position: fixed;
-    bottom: 100%;
-    animation: scan 4s linear infinite;
-}
-
-@keyframes scan {
-    0% { bottom: 100%; }
-    100% { bottom: -100px; }
-}
-
+/* --- HEADER ÉLARGI --- */
 header {
-    background: var(--secondary-bg);
-    border-bottom: 2px solid var(--accent-color);
-    padding: 20px 50px;
+    background: var(--white);
+    width: 100%;
+    border-bottom: 3px solid var(--main-green);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Sépare gauche et droite */
     align-items: center;
+    padding: 0 40px; /* Marges sur les côtés */
+    height: 70px; /* Hauteur de la barre */
 }
 
-.subtitle {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    display: block;
-    letter-spacing: 2px;
-}
-
+/* Navigation à gauche */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     transition: 0.3s;
-    border: 1px solid transparent;
-    padding: 5px 10px;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 nav a:hover, nav a.active {
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    background: rgba(255, 62, 62, 0.1);
+    color: var(--main-green);
 }
 
-.alert-bar {
-    background: var(--accent-color);
-    color: black;
-    font-weight: bold;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 20px;
-    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--main-green);
 }
 
-.terminal-box {
-    background: black;
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    font-family: 'Share Tech Mono', monospace;
-    color: #00ff00;
-    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.2);
+/* Titre à droite */
+.site-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
 }
 
+.separator {
+    color: var(--main-green);
+    font-weight: 800;
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+/* --- CONTENU --- */
 main {
-    padding: 50px;
+    margin-top: 120px; /* Espace pour le header fixe */
+    padding: 0 40px;
+}
+
+.container {
     max-width: 1200px;
-    margin: auto;
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--main-green);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.green-text {
+    color: var(--main-green);
+}
+
+p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Barrettes de menu style SCP */
+.action-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bar {
+    background: var(--main-green);
+    color: white;
+    padding: 15px 25px;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-left: 0px solid var(--dark-green);
+}
+
+.bar:hover {
+    padding-left: 40px;
+    background: var(--dark-green);
+    border-left: 10px solid #000;
 }

@@ -3,44 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SP-01 | Foundation SCP</title>
+    <title>SP-01 | GESTION & PLANIFICATION</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Oswald:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="scanline"></div>
-
     <header>
-        <div class="logo-container">
-            <div class="scp-logo"></div>
-            <h1>SITE-01 <span class="subtitle">SP-01: GESTION & PLANIFICATION</span></h1>
+        <div class="header-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">ACCUEIL</a></li>
+                    <li><a href="#">ÉQUIPE</a></li>
+                    <li><a href="#">ACTUALITÉS</a></li>
+                    <li><a href="#">LOGISTIQUE</a></li>
+                    <li><a href="#">ARCHIVES</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-title">
+                <span class="separator">|</span> SP-01 : GESTION & PLANIFICATION
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#accueil" class="active">ACCUEIL</a></li>
-                <li><a href="#equipe">ÉQUIPE</a></li>
-                <li><a href="#actualites">ACTUALITÉS</a></li>
-                <li><a href="#confinement">PROCÉDURES</a></li> <li><a href="#archives">ARCHIVES</a></li>    <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <div class="alert-bar">NIVEAU D'ACCRÉDITATION 4 REQUIS</div>
-            <h2>BIENVENUE AU CENTRE DE COMMANDEMENT</h2>
-            <p>Le Site-01 est le centre administratif majeur de la Fondation. Vous êtes sur l'interface SP-01 de gestion des ressources et du personnel.</p>
-            <div class="terminal-box">
-                <p>> Initialisation de la session...</p>
-                <p>> Accès autorisé. Bienvenue, Administrateur.</p>
+        <section class="hero">
+            <div class="container">
+                <div class="status-indicator">
+                    <span class="dot"></span> SYSTÈME OPÉRATIONNEL
+                </div>
+                <h1>Administration Centrale <br><span class="green-text">Site-01</span></h1>
+                <p>Interface de coordination des ressources humaines et matérielles de la branche francophone.</p>
+                
+                <div class="action-bars">
+                    <div class="bar">ACCÈS BASE DE DONNÉES PERSONNEL</div>
+                    <div class="bar">PLANIFICATION DES CHANTIERS (BUILD)</div>
+                </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 1924-2026 Fondation SCP - Branche Francophone | Sécuriser. Contenir. Protéger.</p>
-    </footer>
 
 </body>
 </html>
