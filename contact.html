@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP-01 | Transmission</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="logistique.html">Logistique</a></li>
+                    <li><a href="archives.html">Archives</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="site-title">
+                <span class="separator">|</span> SP-01 : GESTION & PLANIFICATION
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="scp-form-container">
+            <h2>CENTRE DE TRANSMISSION SÉCURISÉ</h2>
+            <p class="page-subtitle">Canal de communication chiffré vers le Conseil de Direction.</p>
+
+            <form>
+                <div class="form-group">
+                    <label>IDENTIFIANT DU PERSONNEL (PSEUDO DISCORD/IN-GAME)</label>
+                    <input type="text" placeholder="Ex: Agent_Larsen" required>
+                </div>
+
+                <div class="form-group">
+                    <label>OBJET DE LA TRANSMISSION</label>
+                    <select required>
+                        <option value="">Sélectionnez une option...</option>
+                        <option value="recrutement">Recrutement (Branche Build)</option>
+                        <option value="moderation">Recrutement (Branche Modération)</option>
+                        <option value="incident">Rapport d'incident RP</option>
+                        <option value="suggestion">Suggestion d'amélioration</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>MESSAGE CRYPTÉ (DÉTAILS DE VOTRE DEMANDE)</label>
+                    <textarea rows="8" placeholder="Veuillez détailler votre message ici..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">INITIER LA TRANSMISSION</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px;">
+        <p>Alerte : Toute fausse déclaration sera sanctionnée d'une rétrogradation de niveau 1.</p>
+    </footer>
+</body>
+</html>

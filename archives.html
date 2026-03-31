@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP-01 | Archives Centrales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="logistique.html">Logistique</a></li>
+                    <li><a href="archives.html" class="active">Archives</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="site-title">
+                <span class="separator">|</span> SP-01 : GESTION & PLANIFICATION
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>ARCHIVES CENTRALES DU PERSONNEL</h2>
+        <p class="page-subtitle">Dossiers déclassifiés et logs de la Fondation SCP.</p>
+
+        <div style="margin-bottom: 30px;">
+            <input type="text" placeholder="RECHERCHER DANS LES ARCHIVES..." style="width: 100%; padding: 20px; border: 2px solid var(--main-green); border-radius: 4px; font-weight: bold;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="archive-folder">
+                <h4>📁 RAPPORTS SCP</h4>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-001-FR</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-049-FR</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-173-FR</a></li>
+                    <li style="padding: 5px 0; color: var(--main-green); font-weight: bold;">[VOIR TOUS LES RAPPORTS]</li>
+                </ul>
+            </div>
+
+            <div class="archive-folder">
+                <h4>📁 DOSSIERS PERSONNELS</h4>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Directeur [NOM]</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Chercheur [NOM]</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Agent [NOM]</a></li>
+                </ul>
+            </div>
+
+            <div class="archive-folder">
+                <h4>📁 LOGS D'INCIDENTS</h4>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Brèche du 12/03/26</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Emeute Classe-D</a></li>
+                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Défaillance Alimentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP-01 | Logistique</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="logistique.html" class="active">Logistique</a></li>
+                    <li><a href="archives.html">Archives</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="site-title">
+                <span class="separator">|</span> SP-01 : GESTION & PLANIFICATION
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="logistique-container">
+            <h2>GESTION LOGISTIQUE & INFRASTRUCTURE</h2>
+            <p class="page-subtitle">État d'avancement des travaux de structure et gestion des ressources.</p>
+
+            <div class="member-card">
+                <h3><span class="separator">|</span> CHANTIERS EN COURS</h3>
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>PROJET</th>
+                            <th>ZONE</th>
+                            <th>RESPONSABLE</th>
+                            <th>AVANCEMENT</th>
+                            <th>STATUT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aile Médicale - Secteur G</td>
+                            <td>Secteur 3</td>
+                            <td>[Nom du Builder]</td>
+                            <td>85%</td>
+                            <td><span class="status-tag working">EN COURS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Extension Cellules Keter</td>
+                            <td>Secteur 4</td>
+                            <td>[Nom du Builder]</td>
+                            <td>30%</td>
+                            <td><span class="status-tag delay">EN ATTENTE</span></td>
+                        </tr>
+                        <tr>
+                            <td>Réfection de la Cafétéria</td>
+                            <td>Zone Civile</td>
+                            <td>L'équipe Build</td>
+                            <td>100%</td>
+                            <td><span class="status-tag done">TERMINÉ</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="member-card">
+                    <h4>MATÉRIEL DE SÉCURITÉ</h4>
+                    <div class="progress-container">
+                        <div class="progress-label"><span>Stock Actuel</span><span>90%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">État des équipements tactiques et armement du site.</p>
+                </div>
+                <div class="member-card">
+                    <h4>UNITÉS DE CONFINEMENT</h4>
+                    <div class="progress-container">
+                        <div class="progress-label"><span>Capacité Occupée</span><span>80%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">Taux d'occupation des cellules de confinement standard.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

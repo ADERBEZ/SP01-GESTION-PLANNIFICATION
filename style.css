@@ -1,11 +1,22 @@
+/* ============================================================
+   FEUILLE DE STYLE CENTRALE - SITE-01 : SP-01
+   ============================================================ */
+
 :root {
     --main-green: #468F51;
     --dark-green: #2d5d35;
+    --light-green: #edf5ee;
     --text-color: #2c3e50;
+    --text-muted: #7f8c8d;
     --bg-light: #f4f7f5;
     --white: #ffffff;
+    --border-color: #dcdde1;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
+/* Reset de base */
 * {
     margin: 0;
     padding: 0;
@@ -16,148 +27,280 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-light);
     color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- HEADER ÉLARGI --- */
+/* --- CONFIGURATION DU MENU --- */
 header {
-    background: var(--white);
+    background-color: #ffffff;
     width: 100%;
-    border-bottom: 3px solid var(--main-green);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: 80px; /* Ajuste selon tes besoins */
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #468F51; /* La ligne verte du bas */
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
 .header-wrapper {
+    width: 100%;
+    max-width: 100%; /* Utilise toute la largeur */
+    padding: 0 50px;
     display: flex;
-    justify-content: space-between; /* Sépare gauche et droite */
+    justify-content: space-between; /* Écarte le menu et le titre */
     align-items: center;
-    padding: 0 40px; /* Marges sur les côtés */
-    height: 70px; /* Hauteur de la barre */
 }
 
-/* Navigation à gauche */
+/* Style de la Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    color: #2c3e50; /* Couleur sombre du texte */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
     transition: 0.3s;
-    position: relative;
-    padding-bottom: 5px;
 }
 
-nav a:hover, nav a.active {
-    color: var(--main-green);
+/* État Actif (Souligné vert comme sur l'image) */
+nav ul li a.active {
+    color: #468F51;
+    border-bottom: 2px solid #468F51;
 }
 
-nav a.active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--main-green);
+nav ul li a:hover {
+    color: #468F51;
 }
 
-/* Titre à droite */
-.site-title {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    letter-spacing: 1px;
-}
-
-.separator {
-    color: var(--main-green);
-    font-weight: 800;
-    margin-right: 10px;
-    font-size: 1.4rem;
-}
-
-/* --- CONTENU --- */
-main {
-    margin-top: 120px; /* Espace pour le header fixe */
-    padding: 0 40px;
-}
-
-.container {
-    max-width: 1200px;
-}
-
-.status-indicator {
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: var(--main-green);
-    margin-bottom: 10px;
+/* Bloc Titre à Droite */
+.site-title-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 15px;
+}
+
+.vertical-bar {
+    width: 4px;
+    height: 25px;
+    background-color: #468F51; /* La petite barre verticale verte */
+}
+
+.site-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #2c3e50;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* --- STRUCTURE PRINCIPALE --- */
+main {
+    margin-top: 120px;
+    padding: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 120px);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- CARTES ET ÉLÉMENTS GRAPHIQUES --- */
+.member-card, .news-item, .log-container, .archive-folder, .scp-form-container {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-left: 8px solid var(--main-green);
+}
+
+.role-tag {
+    display: inline-block;
+    background: var(--light-green);
+    color: var(--main-green);
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 50px;
+    margin-bottom: 15px;
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
+    height: 12px;
+    width: 12px;
     background-color: var(--main-green);
     border-radius: 50%;
     display: inline-block;
-    animation: blink 1.5s infinite;
+    margin-right: 10px;
 }
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+/* --- TABLEAUX --- */
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
+.log-table th {
+    background: var(--main-green);
+    color: var(--white);
+    text-align: left;
+    padding: 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.log-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.status-tag {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.status-tag.working { background: #f39c12; }
+.status-tag.delay { background: #e74c3c; }
+.status-tag.done { background: #27ae60; }
+
+/* --- BARRES DE PROGRESSION --- */
+.progress-container {
+    margin-top: 15px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.progress-bar-bg {
+    background: #e0e0e0;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--main-green);
+    transition: width 1s ease-in-out;
+}
+
+/* --- FORMULAIRES --- */
+.form-group {
     margin-bottom: 20px;
 }
 
-.green-text {
-    color: var(--main-green);
-}
-
-p {
-    max-width: 600px;
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 40px;
-}
-
-/* Barrettes de menu style SCP */
-.action-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.bar {
-    background: var(--main-green);
-    color: white;
-    padding: 15px 25px;
-    width: fit-content;
-    font-weight: bold;
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
     font-size: 0.9rem;
-    cursor: pointer;
-    transition: 0.3s;
-    border-left: 0px solid var(--dark-green);
+    color: var(--text-color);
 }
 
-.bar:hover {
-    padding-left: 40px;
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--main-green);
+    box-shadow: 0 0 0 3px rgba(70, 143, 81, 0.2);
+}
+
+.submit-btn {
+    background: var(--main-green);
+    color: var(--white);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
     background: var(--dark-green);
-    border-left: 10px solid #000;
+    letter-spacing: 1px;
+}
+
+/* Footer simple */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+}
+/* Couleurs du statut dynamique */
+#server-status {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-online {
+    color: #468F51; /* Ton vert habituel */
+}
+
+.status-offline {
+    color: #e74c3c; /* Rouge */
+}
+
+.status-dev {
+    color: #3498db; /* Bleu pour le développement */
+}
+
+.status-loading {
+    color: #7f8c8d; /* Gris pendant le chargement */
 }
