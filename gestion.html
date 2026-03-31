@@ -23,63 +23,58 @@
             </nav>
 
             <div class="site-title-container">
-                <div class="site-title-container">
-                    <div class="settings-container">
-                        <button id="settings-btn" class="gear-btn">⚙️</button>
-                        <div id="settings-dropdown" class="dropdown-content">
-                            <div class="dropdown-item" onclick="toggleDarkMode()">
-                                <span>🌙 Mode Sombre</span>
-                            </div>
-                            <div class="dropdown-item">
-                                <span>🌐 Langue :</span>
-                                <select id="lang-select" onchange="changeLanguage()">
-                                    <option value="fr">Français</option>
-                                    <option value="en">English</option>
-                                </select>
-                            </div>
-                            <hr>
-                            <div class="dropdown-item" onclick="openLoginModal()">
-                                <span>🔑 Connexion</span>
-                            </div>
+                <div class="vertical-bar"></div>
+                <h1 class="site-title">SP-01 : GESTION & PLANIFICATION</h1>
+                </div>
+                <div class="settings-container">
+                    <button id="settings-btn" class="gear-btn">⚙️</button>
+                    <div id="settings-dropdown" class="dropdown-content">
+                        <div class="dropdown-item" onclick="toggleDarkMode()">
+                            <span>🌙 Mode Sombre</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <span>🌐 Langue :</span>
+                            <select id="lang-select" onchange="changeLanguage()">
+                                <option value="fr">Français</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="dropdown-item" onclick="openLoginModal()">
+                            <span>🔑 Connexion</span>
                         </div>
                     </div>
-
-    <div class="vertical-bar"></div>
-
-    <h1 class="site-title">SP-01 : GESTION & PLANIFICATION</h1>
-</div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero-content">
-            <h2>Portail d'Administration Centrale</h2>
-            <p class="page-subtitle">Site-01 - Centre de Commandement de la Fondation SCP.</p>
-            
-            <div class="member-card">
-                <h3>Protocole de Sécurité SP-01</h3>
-                <p>Vous avez accédé à l'interface de gestion SP-01. Ce portail est destiné à la planification des opérations du Site-01. Toute utilisation non autorisée des données présentes ici fera l'objet d'une enquête du département de sécurité.</p>
-                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-                <div class="server-status-container">
-                    <p><strong>Statut du Serveur :</strong> 
-                        <span id="server-status" class="status-loading">CHARGEMENT...</span>
-                    </p>
-                </div>
-                <p><strong>Dernière synchronisation :</strong> <span id="sync-date">Chargement...</span></p>
-            </div>
+        <h2>PANNEAU DE CONTRÔLE NIVEAU 5</h2>
+        
+        <section class="member-card">
+            <h3>1. Administration</h3>
+            <button class="submit-btn">Ajouter un Administrateur</button>
+        </section>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="member-card">
-                    <h4>Accès Rapide : Build</h4>
-                    <p>Consulter les schémas de construction et l'état d'avancement des zones de confinement.</p>
-                    <a href="logistique.html" style="color: var(--main-green); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">Ouvrir Logistique →</a>
-                </div>
-                <div class="member-card">
-                    <h4>Accès Rapide : Personnel</h4>
-                    <p>Consulter la hiérarchie actuelle et les responsables de branches en service.</p>
-                    <a href="equipe.html" style="color: var(--main-green); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">Ouvrir Organigramme →</a>
-                </div>
-            </div>
+        <section class="member-card">
+            <h3>2. Statistiques de Visibilité</h3>
+            <table class="log-table">
+                <tr><th>Période</th><th>Visites</th><th>Pages Vues</th></tr>
+                <tr><td>Aujourd'hui (14h)</td><td>142</td><td>Accueil, Logistique</td></tr>
+                <tr><td>Cette semaine</td><td>1,054</td><td>---</td></tr>
+            </table>
+        </section>
+
+        <section class="member-card">
+            <h3>3. Éditeur d'Organigramme</h3>
+            <p>Interface glisser-déposer (En cours de développement...)</p>
+        </section>
+
+        <section class="member-card">
+            <h3>4. Gestionnaire d'Actualités</h3>
+            <button class="status-tag working">Ajouter une News</button>
+            <button class="status-tag delay">Supprimer</button>
         </section>
     </main>
 

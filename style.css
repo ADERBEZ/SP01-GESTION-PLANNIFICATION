@@ -330,18 +330,24 @@ footer {
 
 /* Menu Déroulant */
 .settings-container { position: relative; display: inline-block; }
+/* Ce code force l'affichage quand on ajoute la classe 'show' via JS */
+.dropdown-content.show {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Assure-toi que la base est cachée */
 .dropdown-content {
     display: none;
     position: absolute;
     right: 0;
-    top: 40px;
     background-color: white;
-    min-width: 200px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    z-index: 10000;
-    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+    min-width: 160px;
     border-radius: 4px;
+    margin-top: 10px;
 }
 .dropdown-item { padding: 10px; cursor: pointer; font-size: 13px; font-family: 'Montserrat'; }
 .dropdown-item:hover { background: var(--bg-light); }
@@ -358,3 +364,7 @@ body.dark-mode {
     color: white;
 }
 .dark-mode .site-title, .dark-mode nav ul li a { color: white; }
+/* Le .show doit être collé à .dropdown-content sans espace */
+.dropdown-content.show {
+    display: block !important;
+}
