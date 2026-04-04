@@ -22,7 +22,7 @@
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
                     <li><a href="logistique.html" class="active">Logistique</a></li>
                     <li><a href="archives.html">Archives</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -116,15 +116,6 @@
             </div>
         </section>
     </main>
-    <script>
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-        const navUl = document.querySelector('nav ul');
-        const contactLi = navUl.lastElementChild;
-        const gestionLi = document.createElement('li');
-        gestionLi.innerHTML = '<a href="gestion.html" style="color: #e67e22;">GESTION</a>';
-        navUl.insertBefore(gestionLi, contactLi);
-    }
-</script>
 <script src="script.js"></script>
 </body>
 </html>

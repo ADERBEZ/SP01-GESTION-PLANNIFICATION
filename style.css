@@ -368,3 +368,51 @@ body.dark-mode {
 .dropdown-content.show {
     display: block !important;
 }
+
+/* Correction du décalage des ancres dû au header fixe */
+html {
+    scroll-padding-top: 100px;
+}
+
+/* Amélioration visuelle du Mode Sombre */
+.dark-mode .member-card, 
+.dark-mode .news-item, 
+.dark-mode .scp-form-container,
+.dark-mode .dropdown-content {
+    background-color: #252525;
+    border-color: #444;
+    color: #eee;
+}
+
+.dark-mode input, 
+.dark-mode select, 
+.dark-mode textarea {
+    background-color: #1a1a1a;
+    border-color: #444;
+    color: white;
+}
+
+.dark-mode .site-title, 
+.dark-mode nav ul li a {
+    color: #fff;
+}
+
+/* Z-index pour s'assurer que le menu est toujours au-dessus */
+header {
+    z-index: 10000;
+}
+
+.dropdown-content {
+    z-index: 10001;
+}
+
+/* Animation fluide pour le dropdown */
+.dropdown-content.show {
+    display: block !important;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
