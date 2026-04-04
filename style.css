@@ -30,77 +30,101 @@ body {
     overflow-x: hidden;
 }
 
-/* --- CONFIGURATION DU MENU --- */
+/* 1. LE CONTENEUR GÉNÉRAL (HEADER) */
 header {
     background-color: #ffffff;
     width: 100%;
-    height: 80px; /* Ajuste selon tes besoins */
+    height: 80px;
     display: flex;
-    align-items: center;
-    border-bottom: 3px solid #468F51; /* La ligne verte du bas */
+    align-items: center; /* Centre tout verticalement */
+    border-bottom: 3px solid #468F51;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .header-wrapper {
     width: 100%;
+    height: 100%; /* Prend toute la hauteur pour centrer */
     padding: 0 50px;
     display: flex;
-    justify-content: space-between; /* Pousse la nav à gauche et le titre à droite */
+    align-items: center; /* Centre verticalement */
+    justify-content: flex-start; /* On laisse le nav gérer l'espace */
+}
+
+/* 2. LA NAVIGATION */
+nav {
+    flex: 1; /* Prend tout l'espace disponible */
+    height: 100%;
+    display: flex;
     align-items: center;
 }
 
-/* Style de la Navigation */
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 80px; /* Doit être identique à la hauteur du header */
+    align-items: center; /* Centre verticalement tous les LI */
+    gap: 35px;
+    width: 100%;
+}
+
+nav ul li {
+    display: flex;
     align-items: center;
-    width: 100%; /* Important pour que le margin-left: auto fonctionne */
+    height: 100%; /* Occupe toute la hauteur pour le centrage */
 }
 
-/* Cible le dernier élément de la liste (le container des paramètres) */
 nav ul li.settings-container {
-    margin-left: auto; /* Cela va pousser PARAMÈTRES tout à droite de la zone de navigation */
-    padding-left: 35px; /* Optionnel : garde un espace minimum avec CONTACT */
+    margin-left: auto !important; /* Pousse tout le bloc à droite */
 }
 
-/* Assure-toi que la navigation prend bien toute la place disponible entre la gauche et le titre */
-nav {
-    flex-grow: 1; 
-    margin-right: 40px; /* Espace entre PARAMÈTRES et la barre verticale verte */
+nav ul li.settings-container {
+    margin-left: auto !important; 
+    height: 80px;            /* Doit correspondre à la hauteur du header */
+    display: flex;
+    align-items: center;     /* Centre le contenu du li verticalement */
 }
 
-nav ul li a {
+nav ul li a, 
+.nav-settings {
     text-transform: uppercase;
     text-decoration: none;
-    color: #2c3e50; /* Couleur sombre du texte */
+    color: #2c3e50;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 0.5px;
-    padding-bottom: 8px;
-    transition: 0.3s;
+    
+    /* GESTION DE LA BARRE : On utilise un padding court */
+    padding-bottom: 4px; 
+    border-bottom: 2px solid transparent; /* La barre est déjà là mais invisible */
+    
+    display: inline-block;
+    line-height: 1; /* Évite que le texte ne prenne trop de place en hauteur */
+    transition: color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-/* État Actif (Souligné vert comme sur l'image) */
-nav ul li a.active {
-    text-transform: uppercase;
+nav ul li a.active,
+nav ul li a:hover,
+.nav-settings:hover {
     color: #468F51;
-    border-bottom: 2px solid #468F51;
+    border-bottom: 2px solid #468F51; /* La barre devient verte juste ici */
 }
 
-nav ul li a:hover {
-    text-transform: uppercase;
-    color: #468F51;
-}
-
-/* Bloc Titre à Droite */
 .site-title-container {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: 30px;
 }
 
 .vertical-bar {
@@ -400,18 +424,18 @@ footer {
 
 /* Style du lien Paramètres pour qu'il ressemble aux autres */
 .nav-settings {
+    display: flex;           /* Utilise flex pour le centrage interne */
+    align-items: center;    /* Centre le texte verticalement */
+    height: 100%;           /* Prend toute la hauteur du li */
+    padding-bottom: 4px;    /* Aligne la future barre verte à la même hauteur que les autres */
+    margin: 0;
     text-transform: uppercase;
-    text-decoration: none;
-    color: #2c3e50;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    letter-spacing: 0.5px;
-    padding-bottom: 8px;
-    transition: 0.3s;
-    cursor: pointer;
-    border: none;
     background: none;
+    border: none;
+    cursor: pointer;
+    color: #2c3e50;
 }
 
 .nav-settings:hover {
@@ -419,10 +443,10 @@ footer {
     border-bottom: 2px solid #468F51;
 }
 
-/* Ajustement du menu déroulant pour qu'il s'aligne sous le texte */
+/* On s'assure que le container reste bien positionné pour le menu déroulant */
 .settings-container {
     position: relative;
-    list-style: none;
+    display: inline-block;
 }
 
 .dropdown-content {
