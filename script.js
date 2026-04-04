@@ -42,7 +42,6 @@ function toggleDarkMode() {
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 
-/* --- CONNEXION & PARAMÈTRES --- */
 function initSettingsMenu() {
     document.addEventListener('click', (e) => {
         const btn = document.getElementById('settings-btn');
@@ -50,6 +49,7 @@ function initSettingsMenu() {
         if (!btn || !dropdown) return;
 
         if (e.target.closest('#settings-btn')) {
+            e.preventDefault(); // Empêche le saut de page avec le href="#"
             dropdown.classList.toggle('show');
         } else if (!dropdown.contains(e.target)) {
             dropdown.classList.remove('show');

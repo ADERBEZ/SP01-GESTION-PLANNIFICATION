@@ -20,37 +20,35 @@
         <div class="header-wrapper">
             <nav>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="actualites.html">Actualités</a></li>
-                    <li><a href="logistique.html" class="active">Logistique</a></li>
-                    <li><a href="archives.html">Archives</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">ACCUEIL</a></li>
+                    <li><a href="equipe.html">ÉQUIPE</a></li>
+                    <li><a href="actualites.html">ACTUALITÉS</a></li>
+                    <li><a href="logistique.html">LOGISTIQUE</a></li>
+                    <li><a href="archives.html">ARCHIVES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li class="settings-container">
+                        <a href="#" id="settings-btn" class="nav-settings">PARAMÈTRES</a>
+                        <div id="settings-dropdown" class="dropdown-content">
+                            <div class="dropdown-item" onclick="toggleDarkMode()">🌙 Mode Sombre</div>
+                            <div class="dropdown-item">
+                                🌐 Langue : 
+                                <select id="lang-select" onchange="changeLanguage()">
+                                    <option value="fr">Français</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            <hr>
+                            <div class="dropdown-item" onclick="openLoginModal()">🔑 Connexion</div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
-            <div class="site-title">
-                <span class="separator">|</span> SP-01 : GESTION & PLANIFICATION
-            </div>
-                <div class="settings-container">
-                    <button id="settings-btn" class="gear-btn">⚙️</button>
-                    <div id="settings-dropdown" class="dropdown-content">
-                        <div class="dropdown-item" onclick="toggleDarkMode()">
-                            <span>🌙 Mode Sombre</span>
-                        </div>
-                        <div class="dropdown-item">
-                            <span>🌐 Langue :</span>
-                            <select id="lang-select" onchange="changeLanguage()">
-                                <option value="fr">Français</option>
-                                <option value="en">English</option>
-                            </select>
-                        </div>
-                        <hr>
-                        <div class="dropdown-item" onclick="openLoginModal()">
-                            <span>🔑 Connexion</span>
-                        </div>
-                    </div>
-                </div>
-        </div>
+
+            <div class="site-title-container">
+                <div class="vertical-bar"></div>
+                <h1 class="site-title">SP-01 : GESTION & PLANIFICATION</h1>
+            </div> 
+        </div> 
     </header>
 
     <main>
