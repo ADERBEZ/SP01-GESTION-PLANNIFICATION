@@ -1,7 +1,3 @@
-Voici une documentation technique complète au format `README.md` pour ta feuille de style. Elle est structurée pour expliquer la logique globale, puis le détail de chaque section de ton code CSS.
-
----
-
 # 📘 Documentation Technique CSS - Système SP-01
 
 Ce document détaille le fonctionnement de la feuille de style centrale utilisée pour l'interface de gestion **SITE-01 : SP-01**. Le design suit une esthétique "industrielle/sécuritaire" basée sur une palette de verts et de gris, optimisée pour la clarté et la réactivité.
@@ -51,6 +47,3 @@ Le mode sombre est activé via une classe sur la balise `body`.
 * **Inversion des couleurs :** Les fonds passent de blanc/gris clair à un gris anthracite (`#252525`) ou noir (`#1a1a1a`).
 * **Adaptation :** Les textes passent en blanc ou gris clair pour maintenir un contraste de lecture élevé.
 * **Compatibilité Formulaires :** Les champs de saisie s'assombrissent également pour ne pas éblouir l'utilisateur.
-
----
-*Ceci est une documentation générée pour le Site-01. Toute modification du CSS doit être reportée ici pour maintenir la cohérence du projet.*
