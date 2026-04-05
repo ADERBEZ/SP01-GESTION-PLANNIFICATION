@@ -106,3 +106,44 @@ async function initRobloxStatus() {
         });
     }
 }
+
+function toggleArchiveText(button) {
+    // On récupère le conteneur de texte juste avant le bouton
+    const container = button.previousElementSibling;
+    
+    // On bascule la classe 'expanded'
+    container.classList.toggle('expanded');
+    
+    // On change le texte du bouton selon l'état
+    if (container.classList.contains('expanded')) {
+        button.innerText = "Voir moins";
+        // Optionnel : déplace le bouton en bas si le texte est très long
+        button.style.display = "block"; 
+    } else {
+        button.innerText = "Voir plus";
+    }
+}
+
+document.getElementById('archive-search').addEventListener('input', function() {
+    const query = this.value.toUpperCase();
+    const mode = document.getElementById('search-mode').value;
+    const items = document.querySelectorAll('.news-item');
+
+    items.forEach(item => {
+        let textToCompare = "";
+
+        if (mode === 'date') {
+            textToCompare = item.querySelector('.news-date').innerText;
+        } else if (mode === 'category') {
+            textToCompare = item.querySelector('.archive-category-prefix').innerText;
+        } else {
+            textToCompare = item.innerText; // Recherche dans tout le bloc
+        }
+
+        if (textToCompare.toUpperCase().includes(query)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    });
+});

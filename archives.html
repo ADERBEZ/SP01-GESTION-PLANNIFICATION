@@ -52,43 +52,144 @@
     </header>
 
     <main>
-        <h2>ARCHIVES CENTRALES DU PERSONNEL</h2>
-        <p class="page-subtitle">Dossiers déclassifiés et logs de la Fondation SCP.</p>
+        <h2>ARCHIVES CENTRALES</h2>
+        <p class="page-subtitle">Accès restreint - Consultation des logs déclassifiés.</p>
 
-        <div style="margin-bottom: 30px;">
-            <input type="text" placeholder="RECHERCHER DANS LES ARCHIVES..." style="width: 100%; padding: 20px; border: 2px solid var(--main-green); border-radius: 4px; font-weight: bold;">
+        <div class="search-wrapper">
+            <select id="search-mode" class="search-select">
+                <option value="all">TOUT</option>
+                <option value="date">DATE</option>
+                <option value="category">CATÉGORIE</option>
+            </select>
+            
+            <input type="text" id="archive-search" placeholder="RECHERCHER DANS LES ARCHIVES..." class="search-field">
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div class="archive-folder">
-                <h4>📁 RAPPORTS SCP</h4>
-                <ul style="list-style: none; padding-top: 10px;">
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-001-FR</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-049-FR</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">SCP-173-FR</a></li>
-                    <li style="padding: 5px 0; color: var(--main-green); font-weight: bold;">[VOIR TOUS LES RAPPORTS]</li>
-                </ul>
-            </div>
+        <div class="archive-list-container">
 
-            <div class="archive-folder">
-                <h4>📁 DOSSIERS PERSONNELS</h4>
-                <ul style="list-style: none; padding-top: 10px;">
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Directeur [NOM]</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Chercheur [NOM]</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Agent [NOM]</a></li>
-                </ul>
-            </div>
-
-            <div class="archive-folder">
-                <h4>📁 LOGS D'INCIDENTS</h4>
-                <ul style="list-style: none; padding-top: 10px;">
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Brèche du 12/03/26</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Emeute Classe-D</a></li>
-                    <li style="padding: 5px 0;"><a href="#" style="text-decoration:none; color: var(--text-color);">Défaillance Alimentation</a></li>
-                </ul>
-            </div>
+            <article class="news-item">
+                <div class="news-date">28 MARS 2026 - 15:57</div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span class="archive-category-prefix">RÉSERVATIONS</span>
+                        <span class="archive-separator">-</span>
+                        <span style="color: var(--main-green);">GESTION DES RÉSERVATIONS</span>
+                    </h4>
+                    
+                    <div class="archive-text-container">
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                            A 18h00, "N3XU5.exe" et ces invité vont occupé la Salle de Commission pour une durée indéterminé, il vous est demandé de ne pas interférez avec leur séances RP durant leur occupation.
+                        </p>
+                    </div>
+                    
+                    <button class="toggle-text-btn" onclick="toggleArchiveText(this)">Voir plus</button>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-date">22 MARS 2026 - 12:57</div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span class="archive-category-prefix">RÉSERVATIONS</span>
+                        <span class="archive-separator">-</span>
+                        <span style="color: var(--main-green);">GESTION DES RÉSERVATIONS</span>
+                    </h4>
+                    
+                    <div class="archive-text-container">
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                            A 13h30, le Site-32 va occupé la salle de commission pour une durée indéterminée. Il est strictement demandé à tout le personnel de ne pas interférer avec leurs séances RP durant toute la durée de l'occupation. Toute infraction sera signalée au commandement du site pour mesure disciplinaire immédiate.
+                        </p>
+                    </div>
+                    
+                    <button class="toggle-text-btn" onclick="toggleArchiveText(this)">Voir plus</button>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-date">22 MARS 2026 - 15:16</div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span class="archive-category-prefix">RÉSERVATIONS</span>
+                        <span class="archive-separator">-</span>
+                        <span style="color: var(--main-green);">GESTION DES RÉSERVATIONS</span>
+                    </h4>
+                    
+                    <div class="archive-text-container">
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                            A 17h30, le Site-88 va occupé la Salle de Commission pour une durée indéterminé, il vous est demandé de ne pas interférez avec leur séances RP durant leur occupation.
+                        </p>
+                    </div>
+                    
+                    <button class="toggle-text-btn" onclick="toggleArchiveText(this)">Voir plus</button>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-date">14 MARS 2026 - 03:42</div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span class="archive-category-prefix">RAPPORT D'INCIDENT</span>
+                        <span class="archive-separator">-</span>
+                        <span style="color: var(--main-green);">BRECHE DE CONFINEMENT PARTIEL</span>
+                    </h4>
+                    
+                    <div class="archive-text-container">
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                            À 03h42, une défaillance inexpliquée des capteurs de pression a entraîné l'ouverture automatisée du sas de sécurité AB. L'entité a tenté une manifestation visuelle avant que les protocoles de verrouillage automatique ne soient activés. Aucune perte humaine n'est à déplorer, mais une exposition cognitive de niveau 2 a été signalée chez trois membres du personnel de maintenance.
+                        </p>
+                    </div>
+                    
+                    <button class="toggle-text-btn" onclick="toggleArchiveText(this)">Voir plus</button>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-date">02 FÉVRIER 2026 - 13:21</div>
+                
+                <div style="margin-top: 15px;">
+                    <h4 style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span class="archive-category-prefix">RAPPORT D'INCIDENT</span>
+                        <span class="archive-separator">-</span>
+                        <span style="color: var(--main-green);">BRECHE DE CONFINEMENT TEMPORELLE</span>
+                    </h4>
+                    
+                    <div class="archive-text-container">
+                        
+                        <h5>DESCRIPTION DES FAITS</h5>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                        Le 28/02/2026, à 12h14, les capteurs de stabilité dimensionnelle du Site-DE ont enregistré une chute brutale de la réalité locale, atteignant un creux de $H < 0,12$ Scantrons. 
+                        Le point d'origine a été localisé avec précision dans la cafétéria du personnel du Secteur Charlie. </p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">
+                        L'anomalie, désignée sous le terme de "Boucle de Rétroaction Causal", a isolé une séquence de 4,02 secondes dans une bulle de temps dilaté. 
+                        Soixante-douze (72) employés ont été pris au piège dans ce cycle, condamnés à répéter le segment moteur "Séquence de Nutrition 04" (ingestion de nourriture par ustensile).</p>
+                        
+                        <br><h5>ANALYSE TECHNIQUE</h5>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">Pendant la durée de l'incident (15 minutes en temps réel externe), la bulle temporelle a effectué approximativement 223 itérations. 
+                        Les relevés de l'Ancre de Réalité de Scranton (SRA) située à proximité indiquent que :</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">- La température ambiante à l'intérieur de la boucle a augmenté de $1,2\text{°C}$ par minute.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">- Les ondes cérébrales des sujets ont montré une synchronisation anormale à une fréquence de [DONNÉES SUPPRIMÉES].</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">- [CENSURÉ] a commencé à se manifester sur les parois, suggérant une érosion de la barrière entre notre dimension et le plan ████-████.</p>
+                        
+                        <br><h5>ORIGINE ET RESPONSABILITÉ</h5>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">L'enquête préliminaire menée par le Département de la Sécurité Interne (DSI) a révélé que l'anomalie n'était pas un événement naturel. 
+                        Elle résulte d'une fuite de [CENSURÉ] provoquée par l'utilisation non autorisée du Dispositif de Déplacement ██████ au Niveau ██.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;">Le chercheur principal, le Dr [DONNÉES SUPPRIMÉES], aurait tenté de court-circuiter les protocoles de sécurité pour observer les effets de SCP-████ sur le flux temporel local. 
+                        L'individu a été appréhendé alors qu'il tentait de dissimuler les journaux de bord de l'ordinateur central.</p>
+                        
+                        <br><h5>CONSÉQUENCES ET TRAITEMENT</h5>
+                        <p>L'anomalie s'est dissipée d'elle-même à 12h29 suite à une décharge de particules de type ██████.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;"></p>- Évaluation Médicale : Sur les 72 sujets, █ ont présenté des signes de "Fatigue de la Réalité" et █ ont été déclarés en état de mort cérébrale par répétition synaptique excessive.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;"></p>- Mesures de Confinement : Le Secteur Charlie restera sous scellés jusqu'au ██/██/2026. Un nettoyage à l'aide de stabilisateurs de réalité est en cours.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;"></p>- Protocole de Secret : Le personnel ayant survécu a reçu une dose de $150\text{ mg}$ d'Amnésiques de Classe B. Toute mention de l'incident impliquant l'ustensile de cuisine sera traitée comme une brèche de sécurité de Niveau 4.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0;"></p>- Note du Commandement du Site : "Que cela serve d'avertissement. Jouer avec la causalité pour gagner quelques minutes de recherche n'est pas seulement stupide, c'est une menace existentielle pour ce Site." — Dir. ████████</p>
+                    </div>
+                    
+                    <button class="toggle-text-btn" onclick="toggleArchiveText(this)">Voir plus</button>
+                </div>
+            </article>
         </div>
     </main>
+
     <footer>
         &copy; 2026 Fondation SCP - Branche Francophone - Site-01 | Sécuriser, Contenir, Protéger.
     </footer>
