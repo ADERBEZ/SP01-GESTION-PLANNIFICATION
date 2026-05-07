@@ -1,0 +1,40 @@
+{
+    "chantiers": [
+        {
+            "projet": "Aile Médicale - Secteur G",
+            "zone": "Secteur 3",
+            "responsable": "[Nom du Builder]",
+            "avancement": 85,
+            "statut": "working",
+            "statut_label": "EN COURS"
+        },
+        {
+            "projet": "Extension Cellules Keter",
+            "zone": "Secteur 4",
+            "responsable": "[Nom du Builder]",
+            "avancement": 30,
+            "statut": "delay",
+            "statut_label": "EN ATTENTE"
+        },
+        {
+            "projet": "Réfection de la Cafétéria",
+            "zone": "Zone Civile",
+            "responsable": "L'équipe Build",
+            "avancement": 100,
+            "statut": "done",
+            "statut_label": "TERMINÉ"
+        }
+    ],
+    "ressources": [
+        {
+            "nom": "Matériel de Sécurité",
+            "description": "État des équipements tactiques et armement du site.",
+            "valeur": 90
+        },
+        {
+            "nom": "Unités de Confinement",
+            "description": "Taux d'occupation des cellules de confinement standard.",
+            "valeur": 80
+        }
+    ]
+}
