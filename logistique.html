@@ -68,7 +68,8 @@
                             <th>STATUT</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <!-- ✅ id ajouté ici : le JS remplace le contenu de ce tbody -->
+                    <tbody id="chantiers-tbody">
                         <tr>
                             <td>Aile Médicale - Secteur G</td>
                             <td>Secteur 3</td>
@@ -94,26 +95,33 @@
                 </table>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <!-- ✅ id ajouté ici : le JS met à jour les barres de progression -->
+            <div id="ressources-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div class="member-card">
                     <h4>MATÉRIEL DE SÉCURITÉ</h4>
                     <div class="progress-container">
-                        <div class="progress-label"><span>Stock Actuel</span><span>90%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                        <div class="progress-label"><span>Stock Actuel</span><span id="label-materiel">90%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" id="bar-materiel" style="width: 90%;"></div></div>
                     </div>
                     <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">État des équipements tactiques et armement du site.</p>
                 </div>
                 <div class="member-card">
                     <h4>UNITÉS DE CONFINEMENT</h4>
                     <div class="progress-container">
-                        <div class="progress-label"><span>Capacité Occupée</span><span>80%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                        <div class="progress-label"><span>Capacité Occupée</span><span id="label-confinement">80%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" id="bar-confinement" style="width: 80%;"></div></div>
                     </div>
                     <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">Taux d'occupation des cellules de confinement standard.</p>
                 </div>
             </div>
+
+            <!-- ✅ Indicateur de sync -->
+            <p style="text-align: right; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">
+                🔄 Dernière sync : <span id="last-sync">—</span>
+            </p>
         </section>
     </main>
+
     <footer>
         &copy; 2026 Fondation SCP - Branche Francophone - Site-01 | Sécuriser, Contenir, Protéger.
     </footer>
