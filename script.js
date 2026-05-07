@@ -147,3 +147,87 @@ document.getElementById('archive-search').addEventListener('input', function() {
         }
     });
 });
+/* ============================================================
+   LOGISTIQUE - Chargement dynamique depuis GitHub
+   À AJOUTER dans script.js, à la fin du fichier
+   ============================================================ */
+
+async function initLogistique() {
+    // On vérifie qu'on est bien sur la page logistique
+    const tbody = document.getElementById('chantiers-tbody');
+    const grid  = document.getElementById('ressources-grid');
+    if (!tbody || !grid) return;
+
+    // URL raw GitHub de votre fichier JSON (se met à jour automatiquement quand vous modifiez le JSON sur GitHub)
+    const JSON_URL = 'https://raw.githubusercontent.com/ADERBEZ/SP01-GESTION-PLANNIFICATION/main/logistique.json';
+
+    try {
+        const response = await fetch(JSON_URL + '?t=' + Date.now()); // ?t= évite le cache
+        if (!response.ok) throw new Error('Fichier introuvable');
+        const data = await response.json();
+
+        // --- 1. Remplir le tableau des chantiers ---
+        tbody.innerHTML = '';
+        data.chantiers.forEach(c => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${c.projet}</td>
+                <td>${c.zone}</td>
+                <td>${c.responsable}</td>
+                <td>${c.avancement}%</td>
+                <td><span class="status-tag ${c.statut}">${c.statut_label}</span></td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // --- 2. Remplir les barres de progression ---
+        grid.innerHTML = '';
+        data.ressources.forEach(r => {
+            const card = document.createElement('div');
+            card.className = 'member-card';
+            card.innerHTML = `
+                <h4>${r.nom}</h4>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>${r.nom === 'Unités de Confinement' ? 'Capacité Occupée' : 'Stock Actuel'}</span>
+                        <span>${r.valeur}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">${r.description}</p>
+            `;
+            grid.appendChild(card);
+
+            // Animation de la barre après insertion dans le DOM
+            setTimeout(() => {
+                card.querySelector('.progress-bar-fill').style.width = r.valeur + '%';
+            }, 100);
+        });
+
+        // --- 3. Afficher la date de sync ---
+        const syncEl = document.getElementById('last-sync');
+        if (syncEl) {
+            syncEl.innerText = new Date().toLocaleDateString('fr-FR', {
+                day: 'numeric', month: 'long', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+        }
+
+    } catch (e) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align:center; color: #e74c3c; padding: 30px;">
+                    ⚠️ Impossible de charger les données. Vérifiez que <code>logistique.json</code> est bien présent sur GitHub.
+                </td>
+            </tr>
+        `;
+        console.error('Erreur chargement logistique.json :', e);
+    }
+}
+
+// Appel de la fonction au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    initLogistique();
+});
